@@ -30,35 +30,41 @@ public class Main {
 
     // Uitkomst tonen
 
-        System.out.println("Som" + sumOfDigits);
-        System.out.println("Product" + productOfDigits);
+        System.out.println("Som: " + sumOfDigits);
+        System.out.println("Product: " + productOfDigits);
 
-    // Lees de input van de gebruiker
-        System.out.println("Voer achter elkaar drie getallen in");
-        Scanner userInput = new Scanner(System.in);
+    // Voeg for loop toe om meerdere rondes te kunnen spelen
 
-        int userChoise1 = userInput.nextInt();
-        int userChoise2 = userInput.nextInt();
-        int userChoise3 = userInput.nextInt();
+        int maxTimesToPlay = 0;
 
-        System.out.println("Je hebt de volgende getallen ingevuld:");
-        System.out.println("Getal 1: " + userChoise1);
-        System.out.println("Getal 2: " + userChoise2);
-        System.out.println("Getal 3: " + userChoise3);
+        for (int i = 0; i < 3; i++) {
+            // Lees de input van de gebruiker
 
-    // Win conditie
+            System.out.println("Voer achter elkaar drie getallen in");
+            Scanner userInput = new Scanner(System.in);
 
-        int sumOfPlayer = userChoise1 + userChoise2 + userChoise3;
-        int productOfPlayer = userChoise1 * userChoise2 * userChoise3;
+            int userChoise1 = userInput.nextInt();
+            int userChoise2 = userInput.nextInt();
+            int userChoise3 = userInput.nextInt();
 
-        if(sumOfPlayer == sumOfDigits && productOfPlayer == productOfDigits) {
-            System.out.println("Gefeliciflapstaard, je kunt rekenen!");
-        } else {
-            System.out.println("Mwop Mowp Mwop, you suck at this!");
+            System.out.println("Je hebt de volgende getallen ingevuld:");
+            System.out.println("Getal 1: " + userChoise1);
+            System.out.println("Getal 2: " + userChoise2);
+            System.out.println("Getal 3: " + userChoise3);
+
+            int sumOfPlayer = userChoise1 + userChoise2 + userChoise3;
+            int productOfPlayer = userChoise1 * userChoise2 * userChoise3;
+
+            // Win conditie
+
+            boolean hasPlayerWon = sumOfPlayer == sumOfDigits && productOfPlayer == productOfDigits;
+
+            if(hasPlayerWon) {
+                System.out.println("Gefeliciflapstaard, je kunt rekenen!");
+            } else {
+                System.out.println("Mwop Mowp Mwop, you suck at this!");
+            }
         }
-
-
-    // Meerdere rondes
 
     // Menu toevoegen
     }
