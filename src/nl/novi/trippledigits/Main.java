@@ -60,6 +60,7 @@ public class Main {
 
             if(hasPlayerWon) {
                 System.out.println("Gefeliciflapstaard, je kunt rekenen!");
+                break;
             } else {
                 System.out.println("Mwop Mowp Mwop, you suck at this!");
             }
@@ -73,7 +74,7 @@ public class Main {
 
             // lees de keuze uit
 
-            String continuePlayingUserChoise = userInput.nextLine();
+            String continuePlayingUserChoise = userInput.next();
 
             // maar beslissing op basis van keuze
 
@@ -94,7 +95,7 @@ public class Main {
                 }
             }
 
-            if(continuePlaying == false) {
+            if(!continuePlaying) {
                 break;
             }
         }
