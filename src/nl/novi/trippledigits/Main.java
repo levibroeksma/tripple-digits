@@ -63,6 +63,7 @@ public class Main {
             } else {
                 System.out.println("Mwop Mowp Mwop, you suck at this!");
             }
+
             // voeg een keuze toe
             boolean continuePlaying = true;
 
@@ -91,6 +92,10 @@ public class Main {
                     System.out.println("Je hebt een ongeldige waarde ingevoerd.");
                     break;
                 }
+            }
+
+            if(continuePlaying == false) {
+                break;
             }
         }
         System.out.println("Het spel is afgelopen, bedankt voor het spelen.");
