@@ -35,12 +35,11 @@ public class Main {
 
     // Voeg for loop toe om meerdere rondes te kunnen spelen
 
-        int maxTimesToPlay = 0;
-
         for (int i = 0; i < 3; i++) {
             // Lees de input van de gebruiker
 
             System.out.println("Voer achter elkaar drie getallen in");
+
             Scanner userInput = new Scanner(System.in);
 
             int userChoise1 = userInput.nextInt();
@@ -64,8 +63,36 @@ public class Main {
             } else {
                 System.out.println("Mwop Mowp Mwop, you suck at this!");
             }
-        }
+            // voeg een keuze toe
+            boolean continuePlaying = true;
 
-    // Menu toevoegen
+            // wil je doorspelen?
+
+            System.out.println("Wil je doorspelen? Toets y/n");
+
+            // lees de keuze uit
+
+            String continuePlayingUserChoise = userInput.nextLine();
+
+            // maar beslissing op basis van keuze
+
+            switch (continuePlayingUserChoise) {
+                case "y" : {
+                    System.out.println("Je hebt ervoor gekozen om door te spelen.");
+                    continuePlaying = true;
+                    break;
+                }
+                case "n" : {
+                    System.out.println("Je hebt ervoor gekozen om het spel te stoppen.");
+                    continuePlaying = false;
+                    break;
+                }
+                default:{
+                    System.out.println("Je hebt een ongeldige waarde ingevoerd.");
+                    break;
+                }
+            }
+        }
+        System.out.println("Het spel is afgelopen, bedankt voor het spelen.");
     }
 }
