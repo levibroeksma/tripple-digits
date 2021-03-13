@@ -35,12 +35,18 @@ public class Main {
 
     // Voeg for loop toe om meerdere rondes te kunnen spelen
 
-        for (int i = 0; i < 3; i++) {
+        int maxTimesToPlay = 3;
+        Scanner userInput = new Scanner(System.in);
+
+        while(true) {
+        boolean hasPlayerWon = false;
+
+        while(hasPlayerWon == false) {
             // Lees de input van de gebruiker
 
             System.out.println("Voer achter elkaar drie getallen in");
 
-            Scanner userInput = new Scanner(System.in);
+
 
             int userChoise1 = userInput.nextInt();
             int userChoise2 = userInput.nextInt();
@@ -56,7 +62,7 @@ public class Main {
 
             // Win conditie
 
-            boolean hasPlayerWon = sumOfPlayer == sumOfDigits && productOfPlayer == productOfDigits;
+            hasPlayerWon = sumOfPlayer == sumOfDigits && productOfPlayer == productOfDigits;
 
             if(hasPlayerWon) {
                 System.out.println("Gefeliciflapstaard, je kunt rekenen!");
@@ -64,41 +70,42 @@ public class Main {
             } else {
                 System.out.println("Mwop Mowp Mwop, you suck at this!");
             }
+        }
 
-            // voeg een keuze toe
-            boolean continuePlaying = true;
+        // voeg een keuze toe
+        boolean continuePlaying = true;
 
-            // wil je doorspelen?
+        // wil je doorspelen?
 
-            System.out.println("Wil je doorspelen? Toets y/n");
+        System.out.println("Wil je doorspelen? Toets y/n");
 
-            // lees de keuze uit
+        // lees de keuze uit
 
-            String continuePlayingUserChoise = userInput.next();
+        String continuePlayingUserChoise = userInput.next();
 
-            // maar beslissing op basis van keuze
+        // maar beslissing op basis van keuze
 
-            switch (continuePlayingUserChoise) {
-                case "y" : {
-                    System.out.println("Je hebt ervoor gekozen om door te spelen.");
-                    continuePlaying = true;
-                    break;
-                }
-                case "n" : {
-                    System.out.println("Je hebt ervoor gekozen om het spel te stoppen.");
-                    continuePlaying = false;
-                    break;
-                }
-                default:{
-                    System.out.println("Je hebt een ongeldige waarde ingevoerd.");
-                    break;
-                }
+        switch (continuePlayingUserChoise) {
+            case "y" : {
+                System.out.println("Je hebt ervoor gekozen om door te spelen.");
+                continuePlaying = true;
+                break;
             }
-
-            if(!continuePlaying) {
+            case "n" : {
+                System.out.println("Je hebt ervoor gekozen om het spel te stoppen.");
+                continuePlaying = false;
+                break;
+            }
+            default:{
+                System.out.println("Je hebt een ongeldige waarde ingevoerd.");
                 break;
             }
         }
-        System.out.println("Het spel is afgelopen, bedankt voor het spelen.");
+
+        if(!continuePlaying) {
+            break;
+        }
+        }
+         System.out.println("Het spel is afgelopen, bedankt voor het spelen.");
     }
 }
